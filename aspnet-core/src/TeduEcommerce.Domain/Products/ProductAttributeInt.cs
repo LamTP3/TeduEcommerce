@@ -12,6 +12,6 @@ namespace TeduEcommerce.Products
     {
         public Guid AttributeId { get; set; }
         public Guid ProductId { get; set; }
-        public int Value { get; set; }
+        public int? Value { get; set; }
     }
 }

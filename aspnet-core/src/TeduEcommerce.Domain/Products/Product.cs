@@ -15,6 +15,8 @@ namespace TeduEcommerce.Products
 
         public string Code { get; set; }
 
+        public string Slug { get; set; }
+
         public ProductType ProductType { get; set; }
 
         public string SKU { get; set; }

@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace TeduEcommerce.Manufactures
+namespace TeduEcommerce.Manufacturers
 {
     public class Manufacturer : CreationAuditedAggregateRoot<Guid>
-
-
     {
-
         public string Name { get; set; }
 
         public string Code { get; set; }
