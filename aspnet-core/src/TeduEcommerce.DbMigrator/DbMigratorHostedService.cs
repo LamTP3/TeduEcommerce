@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using TeduEcommerce.Data;
 using Serilog;
 using Volo.Abp;
+using TeduEcommerce.Seeding;
 
 namespace TeduEcommerce.DbMigrator;
 
@@ -33,8 +34,12 @@ public class DbMigratorHostedService : IHostedService
 
             await application
                 .ServiceProvider
-                .GetRequiredService<TeduEcommerceDbMigrationService>()
-                .MigrateAsync();
+                .GetRequiredService<IdentityDataSeeder>()
+                .SeedAsync("admin@tedu.com.vn", "Abc@123$");
+            await application
+    .ServiceProvider
+    .GetRequiredService<TeduEcommerceDbMigrationService>()
+    .MigrateAsync();
 
             await application.ShutdownAsync();
 
