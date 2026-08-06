@@ -256,6 +256,7 @@ src/TeduEcommerce.Web/Logs/*
 src/TeduEcommerce.Web.Host/Logs/*
 src/TeduEcommerce.AuthServer/Logs/*
 src/TeduEcommerce.HttpApi.Host/Logs/*
+src/TeduEcommerce.Admin.HttpApi.Host/Logs/*
 src/TeduEcommerce.HttpApi.HostWithIds/Logs/*
 src/TeduEcommerce.DbMigrator/Logs/*
 src/TeduEcommerce.Blazor.Server/Logs/*
@@ -263,3 +264,16 @@ src/TeduEcommerce.Blazor.Server.Tiered/Logs/*
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*
+**/wwwroot/@fortawesome/*
+**/wwwroot/abp/*
+**/wwwroot/bootstrap/*
+**/wwwroot/bootstrap-datepicker/*
+**/wwwroot/datatables.net*
+**/wwwroot/jquery*
+**/wwwroot/lodash/*
+**/wwwroot/luxon/*
+**/wwwroot/malihu-custom-scrollbar-plugin/*
+**/wwwroot/select2/*
+**/wwwroot/sweetalert2/*
+**/wwwroot/timeago/*
+**/wwwroot/toastr/*
