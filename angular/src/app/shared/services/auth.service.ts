@@ -4,6 +4,7 @@ import { LoginResponseDto } from '../models/login-response.dto';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '../constants/keys.const';
 
 @Injectable({
   providedIn: 'root',
@@ -27,5 +28,14 @@ export class AuthService {
       data,
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } },
     );
+  }
+
+  public isAuthenticated(): boolean {
+    return localStorage.getItem(ACCESS_TOKEN) != null;
+  }
+
+  public logout() {
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(REFRESH_TOKEN);
   }
 }
