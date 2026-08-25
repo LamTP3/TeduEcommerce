@@ -1,46 +1,48 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeduEcommerce.ProductCategories;
+using TeduEcommerce.Products;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Uow;
 
-namespace TeduEcommerce.Admin.ProductCategories
+namespace TeduEcommerce.Admin.Products
 {
-    public class ProductCategoriesAppService : CrudAppService<
-        ProductCategory,
-        ProductCategoryDto,
+    public class ProductsAppService : CrudAppService<
+        Product,
+        ProductDto,
         Guid,
         PagedResultRequestDto,
-        CreateUpdateProductCategoryDto,
-        CreateUpdateProductCategoryDto>, IProductCategoriesAppService
+        CreateUpdateProductDto,
+        CreateUpdateProductDto>, IProductsAppService
     {
 
-        public ProductCategoriesAppService(IRepository<ProductCategory, Guid> repository) 
+        public ProductsAppService(IRepository<Product, Guid> repository) 
             : base(repository)
         {
         }
-
 
         public async Task DeleteMultipleAsync(IEnumerable<Guid> ids)
         {
             await Repository.DeleteManyAsync(ids);
             await UnitOfWorkManager.Current.SaveChangesAsync();
+
         }
 
-        public async Task<List<ProductCategoryInListDto>> GetListAllAsync()
+        public async Task<List<ProductInListDto>> GetListAllAsync()
         {
             var query = await Repository.GetQueryableAsync();
+
             query = query.Where(x => x.IsActive == true);
             var data = await AsyncExecuter.ToListAsync(query);
-
-            return ObjectMapper.Map<List<ProductCategory>, List<ProductCategoryInListDto>>(data);
-
+            return ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data);
         }
-        public async Task<PagedResultDto<ProductCategoryInListDto>> GetListWithFilterAsync(BaseListFilterDto input)
+
+        public async Task<PagedResultDto<ProductInListDto>> GetListWithFilterAsync(BaseListFilterDto input)
         {
             var query = await Repository.GetQueryableAsync();
 
@@ -49,7 +51,7 @@ namespace TeduEcommerce.Admin.ProductCategories
             var totalCount = await AsyncExecuter.LongCountAsync(query);
             var data = await AsyncExecuter.ToListAsync(query.Skip(input.SkipCount).Take(input.MaxResultCount));
 
-            return new PagedResultDto<ProductCategoryInListDto>(totalCount, ObjectMapper.Map<List<ProductCategory>, List<ProductCategoryInListDto>>(data));
+            return new PagedResultDto<ProductInListDto>(totalCount, ObjectMapper.Map<List<Product>, List<ProductInListDto>>(data));
         }
     }
 }
