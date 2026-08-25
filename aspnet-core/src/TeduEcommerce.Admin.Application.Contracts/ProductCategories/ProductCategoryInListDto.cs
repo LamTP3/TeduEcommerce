@@ -5,7 +5,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace TeduEcommerce.Admin.ProductCategories
 {
-    public class ProductCategoryDto: IEntityDto<Guid>
+    public class ProductCategoryInListDto : EntityDto
     {
         public string Name { get; set; }
 
@@ -19,11 +19,5 @@ namespace TeduEcommerce.Admin.ProductCategories
 
         public bool Visibility { get; set; }
 
-        public bool IsActive { get; set; }
-
-        public Guid? ParentId { get; set; }
-
-        public string SeoMetaDescription { get; set; }
-        public Guid Id { get ; set ; }
     }
 }
