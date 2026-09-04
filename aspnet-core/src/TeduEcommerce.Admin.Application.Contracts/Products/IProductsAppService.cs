@@ -14,7 +14,7 @@ namespace TeduEcommerce.Admin.Products
         CreateUpdateProductDto,
         CreateUpdateProductDto>
     {
-        Task<PagedResultDto<ProductInListDto>> GetListWithFilterAsync(BaseListFilterDto input);
+        Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(BaseListFilterDto input);
 
         Task<List<ProductInListDto>> GetListAllAsync();
 

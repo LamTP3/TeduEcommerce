@@ -62,10 +62,10 @@ export class ProductCategoriesService {
     { apiName: this.apiName });
   
 
-  getListWithFilter = (input: BaseListFilterDto) =>
+  getListFilter = (input: BaseListFilterDto) =>
     this.restService.request<any, PagedResultDto<ProductCategoryInListDto>>({
       method: 'GET',
-      url: '/api/app/product-categories/with-filter',
+      url: '/api/app/product-categories/filter',
       params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
