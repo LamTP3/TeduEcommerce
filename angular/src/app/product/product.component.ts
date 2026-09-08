@@ -39,6 +39,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
   loadData() {
+    this.toggleBlockUI(true);
     this.productService
       .getListFilter({
         keyword: this.keyword,
@@ -51,10 +52,24 @@ export class ProductComponent implements OnInit, OnDestroy {
         next: (response: PagedResultDto<ProductInListDto>) => {
           this.items = response.items || [];
           this.totalCount = response.totalCount || 0;
+          this.toggleBlockUI(false);
         },
-        error: () => {},
+        error: () => {
+          this.toggleBlockUI(false);
+        },
       });
   }
+
+  private toggleBlockUI(enabled: boolean) {
+    if (enabled == true) {
+      this.blockedPanel = true;
+    } else {
+      setTimeout(() => {
+        this.blockedPanel = false;
+      }, 1000);
+    }
+  }
+
   loadProductCategories() {
     this.productCategoryService.getListAll().subscribe((response: ProductCategoryInListDto[]) => {
       response.forEach(element => {

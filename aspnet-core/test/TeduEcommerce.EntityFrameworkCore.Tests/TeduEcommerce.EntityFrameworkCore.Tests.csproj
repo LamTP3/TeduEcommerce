@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\TeduEcommerce.EntityFrameworkCore\TeduEcommerce.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\TeduEcommerce.TestBase\TeduEcommerce.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="6.0.3" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

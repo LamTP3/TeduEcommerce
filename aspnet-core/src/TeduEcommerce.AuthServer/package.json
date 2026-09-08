@@ -3,9 +3,6 @@
     "name": "my-app-authserver",
     "private": true,
     "dependencies": {
-        "@abp/aspnetcore.mvc.ui.theme.leptonxlite": "~1.0.4"
-    },
-    "resolutions": {
-        "select2": "4.0.13"
+        "@abp/aspnetcore.mvc.ui.theme.leptonxlite": "~1.0.0-rc.7"
     }
 }
