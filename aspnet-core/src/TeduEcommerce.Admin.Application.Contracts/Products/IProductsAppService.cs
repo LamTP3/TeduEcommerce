@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
@@ -14,7 +13,7 @@ namespace TeduEcommerce.Admin.Products
         CreateUpdateProductDto,
         CreateUpdateProductDto>
     {
-        Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(BaseListFilterDto input);
+        Task<PagedResultDto<ProductInListDto>> GetListFilterAsync(ProductListFilterDto input);
 
         Task<List<ProductInListDto>> GetListAllAsync();
 
