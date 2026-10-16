@@ -3,7 +3,7 @@ import type { EntityDto } from '@abp/ng.core';
 import type { BaseListFilterDto } from '../models';
 
 export interface CreateUpdateProductDto {
-  manufactureId?: string;
+  manufacturerId?: string;
   name?: string;
   code?: string;
   slug?: string;
@@ -22,7 +22,7 @@ export interface ProductDto {
   name?: string;
   code?: string;
   slug?: string;
-  sortOder: number;
+  sortOrder: number;
   coverPicture?: string;
   visibility: boolean;
   isActive: boolean;
@@ -31,8 +31,8 @@ export interface ProductDto {
   id?: string;
 }
 
-export interface ProductInListDto extends EntityDto {
-  manufactureId?: string;
+export interface ProductInListDto extends EntityDto<string> {
+  manufacturerId?: string;
   name?: string;
   code?: string;
   slug?: string;

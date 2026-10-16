@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TeduEcommerce.Products;
@@ -6,9 +6,9 @@ using Volo.Abp.Application.Dtos;
 
 namespace TeduEcommerce.Admin.Products
 {
-    public class ProductInListDto : EntityDto
+    public class ProductInListDto : EntityDto<Guid>
     {
-        public Guid ManufactureId { get; set; }
+        public Guid ManufacturerId { get; set; }
 
         public string Name { get; set; }
 

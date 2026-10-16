@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,7 @@ namespace TeduEcommerce.Products
 {
     public class Product : AuditedAggregateRoot<Guid>
     {
-        public Guid ManufactureId { get; set; }
+        public Guid ManufacturerId { get; set; }
 
         public string Name { get; set; }
 

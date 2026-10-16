@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Application.Dtos;
@@ -13,7 +13,7 @@ namespace TeduEcommerce.Admin.Products
 
         public string Slug { get; set; }
 
-        public int SortOder { get; set; }
+        public int SortOrder { get; set; }
 
         public string CoverPicture { get; set; }
 

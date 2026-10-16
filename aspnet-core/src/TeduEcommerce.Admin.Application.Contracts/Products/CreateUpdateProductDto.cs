@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TeduEcommerce.Products;
@@ -7,7 +7,7 @@ namespace TeduEcommerce.Admin.Products
 {
     public class CreateUpdateProductDto
     {
-        public Guid ManufactureId { get; set; }
+        public Guid ManufacturerId { get; set; }
 
         public string Name { get; set; }
 
