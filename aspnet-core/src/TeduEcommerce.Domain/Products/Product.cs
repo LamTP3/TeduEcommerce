@@ -35,5 +35,7 @@ namespace TeduEcommerce.Products
 
         public string ThumbnailPicture { get; set; }
 
+        public double SellPrice { get; set; }
+
     }
 }

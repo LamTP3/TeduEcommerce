@@ -547,7 +547,7 @@ namespace TeduEcommerce.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<Guid>("ManufactureId")
+                    b.Property<Guid>("ManufacturerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -563,6 +563,9 @@ namespace TeduEcommerce.Migrations
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
+
+                    b.Property<double>("SellPrice")
+                        .HasColumnType("float");
 
                     b.Property<string>("SeoMetaDescription")
                         .HasMaxLength(250)
@@ -860,7 +863,7 @@ namespace TeduEcommerce.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ManufactureId")
+                    b.Property<Guid>("ManufacturerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("PromotionId")
